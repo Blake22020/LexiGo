@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+body, html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.start .question {
+    background: white;
+    width: 100dvw;
+    height: 100dvh;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.start .question-1 {
+    opacity: 0;
+    display: none;
+    flex-direction: column;
+
+    gap: 75px;
+}
+
+.start .question-1 .question-text {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+.start .question-1 .question-text .hi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.start .question-1 .question-text .hi .hello {
+    font-weight: 700;
+    font-size: 120px;
+}
+
+.start .question-1 .question-text .hi .textLogo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+}
+
+.start .question-1 .question-text .hi .textLogo h1 {
+    color: #1CB0F6;
+    font-size: 120px;
+    font-weight: 900;
+}
+
+.start .question-1 .question-text .hi .textLogo img {
+    height: 120px;
+}
+
+.start .question-1 .question-text p {
+    font-size: 64px;
+}
+
+.start .question-1 .answers{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 75px;
+}
+
+.start .question-1 .answers .card{
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 45px;
+    border-bottom: 10px solid #1CB0F6 ;
+    padding: 25px;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.075);
+    }
+
+    &:active {
+        border: 0;
+    }
+}
+
+.start .question-1 .answers .card h1{
+    font-size: 250px;
+}
+
+.start .question-1 .answers .card h2{
+    font-size: 56px;
+}
+
+.start .question-1 .answers p{
+    font-weight: 200;
+    font-size: 48px;
+}
+
+
+
+
+
+.start .question-2 {
+    opacity: 0;
+    display: none;
+    flex-direction: column;
+
+    gap: 75px;
+}
+
+.start .question-2 .question-text {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+.start .question-2 .question-text .hi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.start .question-2 .question-text .hi .hello {
+    font-weight: 700;
+    font-size: 120px;
+}
+
+.start .question-2 .question-text .hi .textLogo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+}
+
+.start .question-2 .question-text .hi .textLogo h1 {
+    color: #1CB0F6;
+    font-size: 120px;
+    font-weight: 900;
+}
+
+.start .question-2 .question-text .hi .textLogo img {
+    height: 120px;
+}
+
+.start .question-2 .question-text p {
+    font-size: 64px;
+}
+
+.start .question-2 .answers{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 75px;
+}
+
+.start .question-2 .answers .card{
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 45px;
+    border-bottom: 10px solid #1CB0F6 ;
+    padding: 25px;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.075);
+    }
+
+    &:active {
+        border: 0;
+        transform: translateY(10px);
+    }
+}
+
+.start .question-2 .answers .card h2{
+    font-size: 56px;
+}
+
+
+
+
+
+.start .question-3 {
+    opacity: 0;
+    display: none;
+    flex-direction: column;
+
+    gap: 75px;
+}
+
+.start .question-3 .question-text {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+.start .question-3 .question-text .hi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.start .question-3 .question-text .hi .hello {
+    font-weight: 700;
+    font-size: 120px;
+}
+
+.start .question-3 .question-text .hi .textLogo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+}
+
+.start .question-3 .question-text .hi .textLogo h1 {
+    color: #1CB0F6;
+    font-size: 120px;
+    font-weight: 900;
+}
+
+.start .question-3 .question-text .hi .textLogo img {
+    height: 120px;
+}
+
+.start .question-3 .question-text p {
+    font-size: 64px;
+}
+
+.start .question-3 .answers{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 75px;
+}
+
+.start .question-3 .answers .card{
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 45px;
+    border-bottom: 10px solid #1CB0F6 ;
+    padding: 25px;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.075);
+    }
+
+    &:active {
+        border: 0;
+        transform: translateY(10px);
+    }
+}
+
+.start .question-3 .answers .card h2{
+    font-size: 56px;
+}
+
+
+
+
+
+.start .question-4 {
+    opacity: 0;
+    display: none;
+    flex-direction: column;
+    width: 75dvw;
+    gap: 75px;
+    margin: auto;
+}
+
+.start .question-4 .question-text {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+.start .question-4 .question-text .hi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.start .question-4 .question-text .hi .hello {
+    font-weight: 700;
+    font-size: 120px;
+}
+
+.start .question-4 .question-text .hi .textLogo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+}
+
+.start .question-4 .question-text .hi .textLogo h1 {
+    color: #1CB0F6;
+    font-size: 120px;
+    font-weight: 900;
+}
+
+.start .question-4 .question-text .hi .textLogo img {
+    height: 120px;
+}
+
+.start .question-4 .question-text p {
+    font-size: 64px;
+}
+
+.start .question-4 .answers{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 75px;
+}
+
+.start .question-4 .answers .card{
+    width: 100%;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 45px;
+    border-bottom: 10px solid #1CB0F6 ;
+    padding: 25px;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.075);
+    }
+
+    &:active {
+        border: 0;
+        transform: translateY(10px);
+    }
+}
+
+.start .question-4 .answers .card h2{
+    font-size: 56px;
+}
+
+.start .loading {
+    background: white;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    width: 100dvw;
+    text-align: center;
+}
+
+.start .loading .container {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    align-items: center;
+    justify-content: center;
+}
+
+.start .loading .container .textLogo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+}
+
+.start .loading .container .textLogo h1 {
+    color:#1CB0F6;
+    font-size: 78px;
+}
+
+.start .loading .container .textLogo img {
+    height: 78px;
+}
+
+.start .loading .container p {
+    font-size: 92px;
+    font-weight: 700;
+}
