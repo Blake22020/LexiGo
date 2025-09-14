@@ -22,18 +22,44 @@ body, html {
     text-align: center;
 }
 
+.start .question-1 .question-text,
+.start .question-2 .question-text,
+.start .question-3 .question-text,
+.start .question-4 .question-text {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+.start .question-1 .question-text .hi .hello,
+.start .question-2 .question-text .hi .hello,
+.start .question-3 .question-text .hi .hello,
+.start .question-4 .question-text .hi .hello {
+    font-size: 56px;
+}
+
+.start .question-1 .question-text .hi .textLogo h1,
+.start .question-2 .question-text .hi .textLogo h1,
+.start .question-3 .question-text .hi .textLogo h1,
+.start .question-4 .question-text .hi .textLogo h1 {
+    color: #1CB0F6;
+    font-size: 120px;
+    font-weight: 900;
+}
+
+.start .question-1 .question-text .hi .textLogo img,
+.start .question-2 .question-text .hi .textLogo img,
+.start .question-3 .question-text .hi .textLogo img,
+.start .question-4 .question-text .hi .textLogo img {
+    height: 120px;
+}
+
 .start .question-1 {
     opacity: 0;
     display: none;
     flex-direction: column;
 
     gap: 75px;
-}
-
-.start .question-1 .question-text {
-    display: flex;
-    flex-direction: column;
-    gap: 120px;
 }
 
 .start .question-1 .question-text .hi {
@@ -46,7 +72,7 @@ body, html {
 
 .start .question-1 .question-text .hi .hello {
     font-weight: 700;
-    font-size: 120px;
+    font-size: 100px;
 }
 
 .start .question-1 .question-text .hi .textLogo {
@@ -56,18 +82,8 @@ body, html {
     gap: 24px;
 }
 
-.start .question-1 .question-text .hi .textLogo h1 {
-    color: #1CB0F6;
-    font-size: 120px;
-    font-weight: 900;
-}
-
-.start .question-1 .question-text .hi .textLogo img {
-    height: 120px;
-}
-
 .start .question-1 .question-text p {
-    font-size: 64px;
+    font-size: 45px;
 }
 
 .start .question-1 .answers{
@@ -106,7 +122,7 @@ body, html {
 
 .start .question-1 .answers p{
     font-weight: 200;
-    font-size: 48px;
+    font-size: 36px;
 }
 
 
@@ -124,7 +140,7 @@ body, html {
 .start .question-2 .question-text {
     display: flex;
     flex-direction: column;
-    gap: 120px;
+    gap: 80px;
 }
 
 .start .question-2 .question-text .hi {
@@ -137,7 +153,7 @@ body, html {
 
 .start .question-2 .question-text .hi .hello {
     font-weight: 700;
-    font-size: 120px;
+    font-size: 64px;
 }
 
 .start .question-2 .question-text .hi .textLogo {
@@ -149,16 +165,16 @@ body, html {
 
 .start .question-2 .question-text .hi .textLogo h1 {
     color: #1CB0F6;
-    font-size: 120px;
+    font-size: 78px;
     font-weight: 900;
 }
 
 .start .question-2 .question-text .hi .textLogo img {
-    height: 120px;
+    height: 78px;
 }
 
 .start .question-2 .question-text p {
-    font-size: 64px;
+    font-size: 45px;
 }
 
 .start .question-2 .answers{
@@ -219,7 +235,7 @@ body, html {
 
 .start .question-3 .question-text .hi .hello {
     font-weight: 700;
-    font-size: 120px;
+    font-size: 64px;
 }
 
 .start .question-3 .question-text .hi .textLogo {
@@ -231,16 +247,16 @@ body, html {
 
 .start .question-3 .question-text .hi .textLogo h1 {
     color: #1CB0F6;
-    font-size: 120px;
+    font-size: 78px;
     font-weight: 900;
 }
 
 .start .question-3 .question-text .hi .textLogo img {
-    height: 120px;
+    height: 78px;
 }
 
 .start .question-3 .question-text p {
-    font-size: 64px;
+    font-size: 45px;
 }
 
 .start .question-3 .answers{
@@ -302,7 +318,7 @@ body, html {
 
 .start .question-4 .question-text .hi .hello {
     font-weight: 700;
-    font-size: 120px;
+    font-size: 64px;
 }
 
 .start .question-4 .question-text .hi .textLogo {
@@ -314,16 +330,16 @@ body, html {
 
 .start .question-4 .question-text .hi .textLogo h1 {
     color: #1CB0F6;
-    font-size: 120px;
+    font-size: 78px;
     font-weight: 900;
 }
 
 .start .question-4 .question-text .hi .textLogo img {
-    height: 120px;
+    height: 78px;
 }
 
 .start .question-4 .question-text p {
-    font-size: 64px;
+    font-size: 45px;
 }
 
 .start .question-4 .answers{
@@ -356,6 +372,8 @@ body, html {
 .start .question-4 .answers .card h2{
     font-size: 56px;
 }
+
+
 
 .start .loading {
     background: white;
@@ -395,4 +413,99 @@ body, html {
 .start .loading .container p {
     font-size: 92px;
     font-weight: 700;
+}
+
+@media (max-width: 1800px) {
+    .start .question-1 .question-text,
+    .start .question-2 .question-text,
+    .start .question-3 .question-text,
+    .start .question-4 .question-text {
+        gap: 25px;
+    }
+
+    .start .question-1 .question-text .hi .hello,
+    .start .question-2 .question-text .hi .hello,
+    .start .question-3 .question-text .hi .hello,
+    .start .question-4 .question-text .hi .hello {
+        font-size: 56px;
+    }
+
+    .start .question-1 .question-text .hi .textLogo h1,
+    .start .question-2 .question-text .hi .textLogo h1,
+    .start .question-3 .question-text .hi .textLogo h1,
+    .start .question-4 .question-text .hi .textLogo h1 {
+        font-size: 64px;
+    }
+
+    .start .question-1 .question-text .hi .textLogo img,
+    .start .question-2 .question-text .hi .textLogo img,
+    .start .question-3 .question-text .hi .textLogo img,
+    .start .question-4 .question-text .hi .textLogo img {
+        height: 78px;
+    }
+}
+
+@media (max-width: 1650px) {
+    .start .question-4 .answers .card h2 {
+        font-size: 36px;
+    }
+
+    .start .loading .container p{
+        font-size: 56px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .start .question-1 .answers .card h1{
+        font-size: 160px;
+    }
+
+    .start .question-1 .answers .card h2{
+        font-size: 40px;
+    }
+
+    .start .question-1 .answers .card, 
+    .start .question-2 .answers .card, 
+    .start .question-3 .answers .card, 
+    .start .question-4 .answers .card {
+        padding: 20px;
+    }
+
+    .start .question-2 .answers .card h2, 
+    .start .question-3 .answers .card h2 {
+        font-size: 40px;
+    }
+
+    .start .question-2 .answers,
+    .start .question-3 .answers {
+        gap: 48px
+    }
+}
+
+@media (max-width: 1024px) {
+    .start .question-2 .answers, 
+    .start .question-3 .answers {
+        gap: 32px;
+        grid-template-columns: 1fr;
+    }
+
+    .start .question-4 {
+        width: 95dvw;
+    }
+
+    .start .question-4 .answers .card{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .start .question-2 .answers .card h2, 
+    .start .question-3 .answers .card h2 {
+        font-size: 32px;
+    }
+
+    .start .question-3 .question-text p,
+    .start .question-4 .question-text p {
+        font-size: 32px;
+    }
 }

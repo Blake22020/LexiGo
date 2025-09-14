@@ -66,6 +66,7 @@ function start() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    if(localStorage.getItem("isStarted") == "true") {
         start()
         let buttonsSetLanguage = document.querySelectorAll(".start .question-1 .answers .card");
 
@@ -113,5 +114,5 @@ document.addEventListener("DOMContentLoaded", () => {
                 
             }, 7000);
         })})
-
+    }
 })
