@@ -508,4 +508,15 @@ body, html {
     .start .question-4 .question-text p {
         font-size: 32px;
     }
+
+
+    .start .question-4 .answers .card h2{
+        font-size: 24px;
+    }
+
+    .start .question-2 .question-text .hi,
+    .start .question-3 .question-text .hi,
+    .start .question-4 .question-text .hi {
+        display: none;
+    }
 }

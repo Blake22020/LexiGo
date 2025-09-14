@@ -65,14 +65,65 @@ function start() {
     setTimeout(() => showQuestion("question-1"), 1000);
 }
 
+function incrementLesson() {
+    let currentLesson = parseInt(localStorage.getItem("lesson"));
+    if (currentLesson < 20) {
+        localStorage.setItem("lesson", currentLesson + 1);
+    }
+    
+    updateLessonsDisplay();
+}
+
+function showWay() {
+    let mainElement = document.getElementById('main');
+    mainElement.style.display = 'block';
+    
+    setTimeout(() => {
+        mainElement.style.opacity = 1;
+    }, 50);
+
+    
+    let lessons = document.querySelectorAll(".main main .container .grid .lesson");
+    
+    lessons.forEach(lesson => {
+        lesson.addEventListener("click", () => {
+            if(parseInt(lesson.getAttribute("res")) == localStorage.getItem("lesson")) {
+                incrementLesson();
+            }
+        })
+    });
+    updateLessonsDisplay();
+}
+ 
+
+function updateLessonsDisplay() {
+    let currentLesson = parseInt(localStorage.getItem("lesson"));
+    let lessons = document.querySelectorAll(".main main .container .grid .lesson");
+    
+    lessons.forEach(lesson => {
+        let lessonNum = parseInt(lesson.getAttribute("res"));
+        
+        lesson.classList.remove("active");
+        
+        if (lessonNum < currentLesson) {
+            lesson.classList.add("active");
+        }
+        
+        if (lessonNum === currentLesson) {
+            lesson.classList.add("current");
+        }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-    if(localStorage.getItem("isStarted") == "true") {
+
+    if (!localStorage.getItem("isStarted") !== "true" ) {
         start()
         let buttonsSetLanguage = document.querySelectorAll(".start .question-1 .answers .card");
 
         buttonsSetLanguage.forEach(button => { button.addEventListener("click", () => {
-            localStorage.setItem("reason", button.getAttribute("res"));
-            console.log(localStorage.getItem("reason"));
+            localStorage.setItem("language", button.getAttribute("res"));
+            console.log(localStorage.getItem("language"));
 
             hideQuestion("question-1")
             setTimeout(() => showQuestion("question-2"), 1000) ;
@@ -81,8 +132,8 @@ document.addEventListener("DOMContentLoaded", () => {
         let buttonsFor = document.querySelectorAll(".start .question-2 .answers .card");
 
         buttonsFor.forEach(button => { button.addEventListener("click", () => {
-            localStorage.setItem("language", button.getAttribute("res"));
-            console.log(localStorage.getItem("language"));
+            localStorage.setItem("reason", button.getAttribute("res"));
+            console.log(localStorage.getItem("reason"));
 
             hideQuestion("question-2")
             setTimeout(() => showQuestion("question-3"), 1000) ;
@@ -111,8 +162,13 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
                 stopAnimation(); 
                 hideQuestion("loading");
-                
+
             }, 7000);
+
+            localStorage.setItem("lesson", 1);
+            setTimeout(() => showWay(), 8000)
         })})
+    } else {
+        setTimeout(() => showWay(), 1000)
     }
 })

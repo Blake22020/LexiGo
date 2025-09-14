@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+body, html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.main {
+    display: none;
+    opacity: 0;
+}
+
+
+.main .header {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100dvw;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    padding: 10px 24px;
+}
+
+.main .header .textLogo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+}
+
+.main .header .textLogo img {
+    height: 49px;
+}
+
+.main .header .textLogo h1 {
+    font-size: 48px;
+    color: #1CB0F6;
+    font-weight: 900;
+}
+
+.main .header .bar {
+    background: rgba(0, 0, 0, 0.75);
+    height: 50px;
+    width: 700px;
+    display: flex;
+    border-radius: 35px;
+    overflow: hidden;
+}
+
+.main .header .bar .bar-progress {
+    background: #1CB0F6;
+    width: 40%;
+}
+
+.main .header .button {
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.main main {
+    margin-top: 97px;
+}
+
+.main main .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100dvw;
+    padding-top: 150px;
+}
+
+.main main .container .grid{
+    display: grid;
+    grid-template-columns: repeat(5, 184px);
+    column-gap: 98px;
+    row-gap: 49px;
+}
+
+.main main .container .grid .lesson{
+    width: 184px;
+    height: 184px;
+    border-radius: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.main main .container .grid .lesson.active{
+    background: #1CB0F6;
+}
+
+.main main .container .grid .lesson.current h2{
+    color: #1CB0F6;
+}
+
+.main main .container .grid .lesson h1{
+    color: white;
+    font-weight: 400;
+    font-family: "Rubik Mono One", monospace;
+}
