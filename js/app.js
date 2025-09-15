@@ -67,11 +67,13 @@ function start() {
 
 function incrementLesson() {
     let currentLesson = parseInt(localStorage.getItem("lesson"));
-    if (currentLesson < 20) {
+    if (currentLesson <= 20) {
         localStorage.setItem("lesson", currentLesson + 1);
     }
     
     updateLessonsDisplay();
+    updateBar();
+
 }
 
 function showWay() {
@@ -86,6 +88,10 @@ function showWay() {
     let lessons = document.querySelectorAll(".main main .container .grid .lesson");
     
     lessons.forEach(lesson => {
+        if (parseInt(lesson.getAttribute("res")) >= 10) {
+            lesson.style.fontSize = "48px"; 
+        }
+
         lesson.addEventListener("click", () => {
             if(parseInt(lesson.getAttribute("res")) == localStorage.getItem("lesson")) {
                 incrementLesson();
@@ -93,6 +99,14 @@ function showWay() {
         })
     });
     updateLessonsDisplay();
+    updateBar();
+}
+
+function updateBar() {
+    let bar = document.getElementById("bar");
+    let progress = document.getElementById("bar-progress");
+
+    progress.style.width = ((parseInt(localStorage.getItem("lesson")) - 1) / 20) * 100 + "%";
 }
  
 
@@ -109,15 +123,19 @@ function updateLessonsDisplay() {
             lesson.classList.add("active");
         }
         
-        if (lessonNum === currentLesson) {
+        if (lessonNum == currentLesson) {
             lesson.classList.add("current");
+        } else {
+            if (lesson.classList.contains("current")) {
+                lesson.classList.remove("current");
+            }
         }
     });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    if (!localStorage.getItem("isStarted") !== "true" ) {
+    if (localStorage.getItem("isStarted") !== "true" ) {
         start()
         let buttonsSetLanguage = document.querySelectorAll(".start .question-1 .answers .card");
 

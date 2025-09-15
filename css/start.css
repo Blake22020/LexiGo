@@ -415,7 +415,7 @@ body, html {
     font-weight: 700;
 }
 
-@media (max-width: 1800px) {
+@media (max-width: 2000px) {
     .start .question-1 .question-text,
     .start .question-2 .question-text,
     .start .question-3 .question-text,
@@ -443,6 +443,10 @@ body, html {
     .start .question-4 .question-text .hi .textLogo img {
         height: 78px;
     }
+}
+
+.hello {
+    display: none;
 }
 
 @media (max-width: 1650px) {

@@ -18,7 +18,7 @@ body, html {
 
 
 .main .header {
-    background: white;
+    background: rgba(255, 255, 255, 0.75);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,6 +29,7 @@ body, html {
     left: 0;
     right: 0;
     padding: 10px 24px;
+    backdrop-filter: blur(10px);
 }
 
 .main .header .textLogo {
@@ -59,7 +60,7 @@ body, html {
 
 .main .header .bar .bar-progress {
     background: #1CB0F6;
-    width: 40%;
+    width: 0%;
 }
 
 .main .header .button {
@@ -80,7 +81,7 @@ body, html {
     align-items: center;
     justify-content: center;
     width: 100dvw;
-    padding-top: 150px;
+    padding: 75px 0; 
 }
 
 .main main .container .grid{
@@ -100,18 +101,59 @@ body, html {
     justify-content: center;
     font-size: 64px;
     background: rgba(0, 0, 0, 0.75);
+    -webkit-user-select: none;  
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .main main .container .grid .lesson.active{
     background: #1CB0F6;
 }
 
-.main main .container .grid .lesson.current h2{
+.main main .container .grid .lesson.current h1 {
     color: #1CB0F6;
+    -webkit-user-select: none;  
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
+
 
 .main main .container .grid .lesson h1{
     color: white;
     font-weight: 400;
     font-family: "Rubik Mono One", monospace;
+}
+
+@media (max-width: 1400px) {
+    .main main .container .grid{
+        grid-template-columns: repeat(4, 184px);
+    }
+}
+
+@media (max-width: 1250px) {
+    .main .header .bar {
+        display: none;
+    }
+}
+
+@media (max-width: 1080px) {
+    .main main .container .grid{
+        grid-template-columns: repeat(3, 184px);
+    }
+}
+
+@media (max-width: 824px) {
+    .main main .container .grid{
+        grid-template-columns: repeat(2, 184px);
+    }
+}
+
+@media (max-width: 500px) {
+    .main main .container .grid {
+        grid-template-columns: repeat(1, 184px);
+    }
 }
