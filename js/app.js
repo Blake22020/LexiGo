@@ -1,3 +1,5 @@
+let profileUser = {};
+
 function showQuestion(questionId) {
     let question = document.getElementById(questionId);
     question.style.opacity = 0;
@@ -142,6 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
         buttonsSetLanguage.forEach(button => { button.addEventListener("click", () => {
             localStorage.setItem("language", button.getAttribute("res"));
             console.log(localStorage.getItem("language"));
+            profileUser["language"] = localStorage.getItem("language"),
 
             hideQuestion("question-1")
             setTimeout(() => showQuestion("question-2"), 1000) ;
@@ -152,6 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
         buttonsFor.forEach(button => { button.addEventListener("click", () => {
             localStorage.setItem("reason", button.getAttribute("res"));
             console.log(localStorage.getItem("reason"));
+            profileUser["reason"] = localStorage.getItem("reason"),
 
             hideQuestion("question-2")
             setTimeout(() => showQuestion("question-3"), 1000) ;
@@ -162,6 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
         buttonsTime.forEach(button => { button.addEventListener("click", () => {
             localStorage.setItem("time", button.getAttribute("res"));
             console.log(localStorage.getItem("time"));
+            profileUser["time"] = localStorage.getItem("time"),
 
             hideQuestion("question-3")
             setTimeout(() => showQuestion("question-4"), 1000) ;
@@ -174,6 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("level", button.getAttribute("res"));
             hideQuestion("question-4")
             console.log(localStorage.getItem("level"));
+            profileUser["level"] = localStorage.getItem("level");
             const stopAnimation = showLoading();
             localStorage.setItem("isStarted", true);
             
