@@ -90,8 +90,12 @@ function showWay() {
     let lessons = document.querySelectorAll(".main main .container .grid .lesson");
     
     lessons.forEach(lesson => {
-        if (parseInt(lesson.getAttribute("res")) >= 10) {
-            lesson.style.fontSize = "48px"; 
+        if (parseInt(lesson.getAttribute("res")) >= 10 ) {
+            if(window.innerWidth > 500) {
+                lesson.style.fontSize = "48px";
+            } else {
+                lesson.style.fontSize = "32px";
+            }
         }
 
         lesson.addEventListener("click", () => {

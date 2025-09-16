@@ -153,7 +153,36 @@ body, html {
 }
 
 @media (max-width: 500px) {
-    .main main .container .grid {
-        grid-template-columns: repeat(1, 184px);
+    .main header a {
+        display: none;
     }
+
+    .main .header {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main .header .textLogo {
+        text-align: center; /* Центрирует текст внутри */
+        width: 100%;
+        justify-content: center;
+    }
+
+    
+
+    .main main .container .grid {
+        grid-template-columns: repeat(2, 120px);
+        gap: 40px; /* Добавьте промежутки между уроками */
+        justify-content: center; /* Центрирует сетку по горизонтали */
+        width: 100%; /* Заполняет всю ширину контейнера */
+    }
+
+    
+
+    .main main .container .grid .lesson {
+        width: 120px;
+        height: 120px;
+        font-size: 48px;
+    }
+
 }
