@@ -94,7 +94,7 @@ function showWay() {
             if(window.innerWidth > 500) {
                 lesson.style.fontSize = "48px";
             } else {
-                lesson.style.fontSize = "32px";
+                lesson.style.fontSize = "24px";
             }
         }
 
@@ -104,6 +104,15 @@ function showWay() {
             }
         })
     });
+
+    let ressetBeutton = document.getElementById("reset");
+    ressetBeutton.addEventListener("click", () => {
+        if (confirm("Вы уверены, что хотите сбросить прогресс?")) {
+            localStorage.clear();
+            location.reload();
+        }
+    })
+
     updateLessonsDisplay();
     updateBar();
 }

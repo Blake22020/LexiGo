@@ -121,11 +121,109 @@ body, html {
     user-select: none;
 }
 
-
 .main main .container .grid .lesson h1{
     color: white;
     font-weight: 400;
     font-family: "Rubik Mono One", monospace;
+}
+
+.main footer {
+    display: flex;
+    flex-direction: column;
+    padding: 9px 19px;
+    gap: 34px;
+    width: 100dvw;
+}
+
+.main footer .text {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.main footer .text h1 {
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.main footer .text a {
+    font-size: 36px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.main footer .buttons {
+    display: flex;
+    gap: 36px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.main footer .buttons a{
+    width: 300px;
+    color: white;
+    background: #1CB0F6;
+    padding: 10px;
+    font-size: 36px;
+    border-radius: 35px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: rgba(28, 176, 246, 0.8);
+    }
+}
+
+.main footer .authorsText {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 35px;
+    width: 100%;
+    align-items: center;
+}
+
+.main footer .authorsText .textButtons {
+    display: flex;
+    gap: 45px;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.main footer .authorsText .textButtons a{
+    font-size: 48px;
+    color: black;
+    text-decoration: none;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.main footer .authorsText .textButtons a:nth-child(1) {
+    color: #1CB0F6;
+    display: flex;
+    font-size: 24px;
+    align-items: center;
+    gap: 10px;
+    font-weight: 400;
+    font-family: "Rubik Mono One", monospace;
+}
+
+.main footer .authorsText .textButtons a:nth-child(1) img {
+    height: 48px;
+}
+
+.main footer .authorsText .authors {
+    display: flex;
+    gap: 24px;
+    font-weight: 100;
+    flex-wrap: wrap;
+    text-align: right;
+    flex-direction: row;
+}
+
+.main footer .authorsText .authors i {
+    font-size: 16px;
+    width: fit-content;
 }
 
 @media (max-width: 1400px) {
@@ -163,7 +261,7 @@ body, html {
     }
 
     .main .header .textLogo {
-        text-align: center; /* Центрирует текст внутри */
+        text-align: center;
         width: 100%;
         justify-content: center;
     }
@@ -172,9 +270,9 @@ body, html {
 
     .main main .container .grid {
         grid-template-columns: repeat(2, 120px);
-        gap: 40px; /* Добавьте промежутки между уроками */
-        justify-content: center; /* Центрирует сетку по горизонтали */
-        width: 100%; /* Заполняет всю ширину контейнера */
+        gap: 40px; 
+        justify-content: center; 
+        width: 100%; 
     }
 
     
