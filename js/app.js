@@ -1,4 +1,7 @@
 let profileUser = {};
+const preventDefault = (e) => e.preventDefault();
+const disableScroll = () => document.addEventListener('touchmove', preventDefault, { passive: false });
+const enableScroll = () => document.removeEventListener('touchmove', preventDefault, { passive: false }); 
 
 function showQuestion(questionId) {
     let question = document.getElementById(questionId);
@@ -78,9 +81,27 @@ function incrementLesson() {
 
 }
 
+function showReset() {
+    let modalReset = document.getElementById("modal-reset");
+
+    modalReset.style.display = "flex";
+
+    let yes = document.getElementById("reset-yes");
+    let no = document.getElementById("reset-no");
+
+    yes.addEventListener("click", () => {
+        localStorage.clear();
+        location.reload();
+    })
+
+    no.addEventListener("click", () => {
+        modalReset.style.display = "none";
+    })
+}
+
 function showWay() {
     let mainElement = document.getElementById('main');
-    mainElement.style.display = 'block';
+    mainElement.style.display = 'flex';
     
     setTimeout(() => {
         mainElement.style.opacity = 1;
@@ -107,10 +128,7 @@ function showWay() {
 
     let ressetBeutton = document.getElementById("reset");
     ressetBeutton.addEventListener("click", () => {
-        if (confirm("Вы уверены, что хотите сбросить прогресс?")) {
-            localStorage.clear();
-            location.reload();
-        }
+        showReset();
     })
 
     updateLessonsDisplay();

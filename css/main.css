@@ -218,12 +218,23 @@ body, html {
     font-weight: 100;
     flex-wrap: wrap;
     text-align: right;
-    flex-direction: row;
+    flex-direction: row !important;
 }
 
 .main footer .authorsText .authors i {
     font-size: 16px;
     width: fit-content;
+}
+
+.modal-reset {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: rgba(1, 1, 1, 0.5);
+    z-index: 1000;
 }
 
 @media (max-width: 1400px) {
