@@ -1,7 +1,7 @@
 let profileUser = {};
 const preventDefault = (e) => e.preventDefault();
-const disableScroll = () => document.addEventListener('touchmove', preventDefault, { passive: false });
-const enableScroll = () => document.removeEventListener('touchmove', preventDefault, { passive: false }); 
+const disableScroll = () => document.addEventListener('touchmove', preventDefault, { passive: false }); // "Никакой прокрутки!"
+const enableScroll = () => document.removeEventListener('touchmove', preventDefault, { passive: false }); // "Продолжаем прокрутку!"
 
 function showQuestion(questionId) {
     let question = document.getElementById(questionId);
@@ -81,27 +81,31 @@ function incrementLesson() {
 
 }
 
-function showReset() {
+function showModalReset() {
     let modalReset = document.getElementById("modal-reset");
 
     modalReset.style.display = "flex";
 
-    let yes = document.getElementById("reset-yes");
-    let no = document.getElementById("reset-no");
+    document.body.style.overflow = "hidden"
+    disableScroll();
 
-    yes.addEventListener("click", () => {
-        localStorage.clear();
-        location.reload();
+    let yesButton = document.getElementById("reset-yes");
+    let noButton = document.getElementById("reset-no");
+
+    yesButton.addEventListener("click", () => {
+        localStorage.clear()
+        location.reload()
     })
 
-    no.addEventListener("click", () => {
+    noButton.addEventListener("click", () => {
         modalReset.style.display = "none";
+        document.body.style.overflow = "auto"
     })
 }
 
 function showWay() {
     let mainElement = document.getElementById('main');
-    mainElement.style.display = 'flex';
+    mainElement.style.display = 'block';
     
     setTimeout(() => {
         mainElement.style.opacity = 1;
@@ -128,7 +132,7 @@ function showWay() {
 
     let ressetBeutton = document.getElementById("reset");
     ressetBeutton.addEventListener("click", () => {
-        showReset();
+        showModalReset();
     })
 
     updateLessonsDisplay();
