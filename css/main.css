@@ -108,6 +108,10 @@ body, html {
     user-select: none;
 }
 
+.main main .container .grid .lesson.double-digit {
+    font-size: 48px;
+}
+
 .main main .container .grid .lesson.active{
     background: #1CB0F6;
 }
@@ -314,6 +318,12 @@ body, html {
     }
 }
 
+@media (max-width: 700px) {
+    .modal-reset .modal {
+        width: 500px;
+    }
+}
+
 @media (max-width: 500px) {
     .main header a {
         display: none;
@@ -339,7 +349,9 @@ body, html {
         width: 100%; 
     }
 
-    
+    .main main .container .grid .lesson.double-digit {
+        font-size: 24px;
+    }
 
     .main main .container .grid .lesson {
         width: 120px;
@@ -347,4 +359,19 @@ body, html {
         font-size: 48px;
     }
 
+    .modal-reset .modal {
+        width: 100%;
+    }
+
+    .modal-reset .modal h1 {
+        font-size: 32px;
+    }
+
+    .modal-reset .modal p {
+        font-size: 24px;
+    }
+
+    .modal-reset .modal .buttons {
+        flex-direction: column-reverse;
+    }
 }

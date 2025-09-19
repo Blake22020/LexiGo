@@ -115,12 +115,10 @@ function showWay() {
     let lessons = document.querySelectorAll(".main main .container .grid .lesson");
     
     lessons.forEach(lesson => {
-        if (parseInt(lesson.getAttribute("res")) >= 10 ) {
-            if(window.innerWidth > 500) {
-                lesson.style.fontSize = "48px";
-            } else {
-                lesson.style.fontSize = "24px";
-            }
+        let lessonNumber = parseInt(lesson.getAttribute("res"));
+
+        if (lessonNumber >= 10) {
+            lesson.classList.add("double-digit");
         }
 
         lesson.addEventListener("click", () => {
