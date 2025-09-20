@@ -3,6 +3,18 @@ const preventDefault = (e) => e.preventDefault();
 const disableScroll = () => document.addEventListener('touchmove', preventDefault, { passive: false }); // "Никакой прокрутки!"
 const enableScroll = () => document.removeEventListener('touchmove', preventDefault, { passive: false }); // "Продолжаем прокрутку!"
 
+
+class Lesson {
+    constructor(reason, time, level, question, options, answer) {
+        this.reason = reason,
+        this.time = time,
+        this.level = level,
+        this.question = question,
+        this.options = options,
+        this.answer = answer
+    }
+}
+
 function showQuestion(questionId) {
     let question = document.getElementById(questionId);
     question.style.opacity = 0;
@@ -168,6 +180,39 @@ function updateLessonsDisplay() {
     });
 }
 
+async function generateLessons() {
+    let res = [];
+
+    let lessons = await fetch("js/lessons.json").then((r) => r.json())
+    for(let lesson of lessons) {
+        let classLesson = new Lesson(lesson.reason, lesson.time, lesson.level, lesson.question, lesson.options, lesson.answer);
+
+        let coincidences = 0;
+
+        if(localStorage.getItem("reason") == classLesson.reason) {
+            coincidences++;
+        } 
+
+        if(localStorage.getItem("time") == classLesson.time) {
+            coincidences++;
+        }
+
+        if(localStorage.getItem("level") == classLesson.level) {
+            coincidences++;
+        }
+
+        if(coincidences >= 2) {
+            res.push(classLesson)
+        }
+
+        if(res.length == 20) {
+            break;
+        }
+    }
+    
+    return res;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 
     if (localStorage.getItem("isStarted") !== "true" ) {
@@ -224,6 +269,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             localStorage.setItem("lesson", 1);
             setTimeout(() => showWay(), 8000)
+            generateLessons().then((lessons) => {
+                localStorage.setItem("lessons", JSON.stringify(lessons));
+                let rawLessons = JSON.parse(localStorage.getItem("lessons"));
+                let lessonsInstance = rawLessons.map((lesson) => new Lesson(lesson.reason, lesson.time, lesson.level, lesson.question, lesson.options, lesson.answer));
+
+                lessonsInstance.forEach((lesson) => {
+                    console.log(lesson.question + `\t` + lesson.options + `\t\t\t` + lesson.answer);
+                })
+            })
         })})
     } else {
         setTimeout(() => showWay(), 1000)
