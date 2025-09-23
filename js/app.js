@@ -15,6 +15,15 @@ class Lesson {
     }
 }
 
+function showLesson(lessonNumber) {
+    let rawLessons = JSON.parse(localStorage.getItem("lessons"));
+    let lessonsInstance = rawLessons.map((lesson) => new Lesson(lesson.reason, lesson.time, lesson.level, lesson.question, lesson.options, lesson.answer));
+    
+    console.log(lessonsInstance[lessonNumber - 1].question)
+    console.log(lessonsInstance[lessonNumber - 1].options)
+    console.log(lessonsInstance[lessonNumber - 1].answer)
+}
+
 function showQuestion(questionId) {
     let question = document.getElementById(questionId);
     question.style.opacity = 0;
@@ -135,6 +144,7 @@ function showWay() {
 
         lesson.addEventListener("click", () => {
             if(parseInt(lesson.getAttribute("res")) == localStorage.getItem("lesson")) {
+                showLesson(lessonNumber);
                 incrementLesson();
             }
         })
@@ -201,7 +211,7 @@ async function generateLessons() {
             coincidences++;
         }
 
-        if(coincidences >= 2) {
+        if(coincidences == 3) {
             res.push(classLesson)
         }
 
@@ -277,6 +287,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 lessonsInstance.forEach((lesson) => {
                     console.log(lesson.question + `\t` + lesson.options + `\t\t\t` + lesson.answer);
                 })
+
+                console.log(lessons.length)
             })
         })})
     } else {
