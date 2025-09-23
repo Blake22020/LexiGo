@@ -18,10 +18,42 @@ class Lesson {
 function showLesson(lessonNumber) {
     let rawLessons = JSON.parse(localStorage.getItem("lessons"));
     let lessonsInstance = rawLessons.map((lesson) => new Lesson(lesson.reason, lesson.time, lesson.level, lesson.question, lesson.options, lesson.answer));
+    let currentLesson = lessonsInstance[lessonNumber - 1];
+
+    hideWay()
     
-    console.log(lessonsInstance[lessonNumber - 1].question)
-    console.log(lessonsInstance[lessonNumber - 1].options)
-    console.log(lessonsInstance[lessonNumber - 1].answer)
+    console.log(currentLesson.question)
+    console.log(currentLesson.options)
+    console.log(currentLesson.answer)
+
+    let sortOptions = currentLesson.options;
+    sortOptions.sort(() => Math.random - 0.5);
+
+    let lesson = document.getElementById("lesson");
+    lesson.style.display = "block";
+    setTimeout(() => {
+        lesson  = `
+            <header>
+                <div class="textLogo">
+                    <img src="assets/owl.png" alt="owl">
+                    <h1>LexiGo</h1>
+                </div>
+                <a href="#">
+                    Главная
+                </a>
+                <div class="main>
+                    <h1>${currentLesson.question}</h1>
+                </div>
+                <div class="answers">
+                    <a href="#">${sortOptions[0]}</a>
+                    <a href="#">${sortOptions[1]}</a>
+                    <a href="#">${sortOptions[2]}</a>
+                    <a href="#">${sortOptions[3]}</a>
+                <div>
+            </heder>
+        `
+    }, 2000)
+    //FIXME: Сделать так что бы урок показывался на экране
 }
 
 function showQuestion(questionId) {
@@ -159,6 +191,11 @@ function showWay() {
     updateBar();
 }
 
+function hideWay() {
+    let mainElement = document.getElementById('main');
+    mainElement.style.display = 'none';
+}
+
 function updateBar() {
     let bar = document.getElementById("bar");
     let progress = document.getElementById("bar-progress");
@@ -283,12 +320,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 localStorage.setItem("lessons", JSON.stringify(lessons));
                 let rawLessons = JSON.parse(localStorage.getItem("lessons"));
                 let lessonsInstance = rawLessons.map((lesson) => new Lesson(lesson.reason, lesson.time, lesson.level, lesson.question, lesson.options, lesson.answer));
-
-                lessonsInstance.forEach((lesson) => {
-                    console.log(lesson.question + `\t` + lesson.options + `\t\t\t` + lesson.answer);
-                })
-
-                console.log(lessons.length)
             })
         })})
     } else {
