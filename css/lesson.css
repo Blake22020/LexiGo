@@ -71,6 +71,7 @@
     padding: 30px;
     color: white;
     font-size: 56px;
+    cursor: pointer;
 }
 
 /*TODO: Добавить адаптацию для мобильных устройств */
