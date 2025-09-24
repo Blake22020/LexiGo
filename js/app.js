@@ -71,7 +71,6 @@ function showLesson(lessonNumber) {
         answer.addEventListener("click", () => {
             if (answer.innerHTML.toLowerCase() == currentLesson.answer) {
                 answer.style.background = "#00d600";
-                alert("Правильно!")
                 let options = document.querySelectorAll("#lesson main .answers a");
                 options.forEach((answer) => {
                     if (answer.innerHTML.toLowerCase() != currentLesson.answer) {
