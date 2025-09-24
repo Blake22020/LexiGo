@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+#lesson {
+    width: 100dvw;
+    height: 100dvh;
+}
+
+#lesson header {
+    background: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#lesson header .textLogo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+}
+
+#lesson header .textLogo img {
+    height: 49px;
+}
+
+#lesson header .textLogo h1 {
+    font-size: 48px;
+    color: #1CB0F6;
+    font-weight: 900;
+}
+
+#lesson header a {
+    color: black;
+    text-decoration: none;
+    font-size: 32px;
+}
+
+#lesson main {
+    padding-top: 5%;
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+}
+
+#lesson main .lessonQuestion h1 {
+    font-size: 64px;
+    font-weight: 900;
+}
+
+#lesson main .answers {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 40%;
+}
+
+#lesson main .answers a {
+    text-decoration: none;
+    background: #1CB0F6;
+    border-radius: 35px;
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    color: white;
+    font-size: 56px;
+}
+
+/*TODO: Добавить адаптацию для мобильных устройств */

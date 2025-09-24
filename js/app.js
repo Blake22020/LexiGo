@@ -15,6 +15,10 @@ class Lesson {
     }
 }
 
+function capitalize(string) {
+    return string[0].toUpperCase() + string.slice(1).toLowerCase();
+}
+
 function showLesson(lessonNumber) {
     let rawLessons = JSON.parse(localStorage.getItem("lessons"));
     let lessonsInstance = rawLessons.map((lesson) => new Lesson(lesson.reason, lesson.time, lesson.level, lesson.question, lesson.options, lesson.answer));
@@ -27,33 +31,65 @@ function showLesson(lessonNumber) {
     console.log(currentLesson.answer)
 
     let sortOptions = currentLesson.options;
-    sortOptions.sort(() => Math.random - 0.5);
+    sortOptions.sort(() => Math.random() - 0.5);
+    sortOptions = sortOptions.map((option) => {
+        return capitalize(option);
+    })
 
     let lesson = document.getElementById("lesson");
     lesson.style.display = "block";
-    setTimeout(() => {
-        lesson  = `
-            <header>
-                <div class="textLogo">
-                    <img src="assets/owl.png" alt="owl">
-                    <h1>LexiGo</h1>
-                </div>
-                <a href="#">
-                    Главная
-                </a>
-                <div class="main>
-                    <h1>${currentLesson.question}</h1>
-                </div>
-                <div class="answers">
-                    <a href="#">${sortOptions[0]}</a>
-                    <a href="#">${sortOptions[1]}</a>
-                    <a href="#">${sortOptions[2]}</a>
-                    <a href="#">${sortOptions[3]}</a>
-                <div>
-            </heder>
-        `
-    }, 2000)
-    //FIXME: Сделать так что бы урок показывался на экране
+    lesson.innerHTML  = `
+        <header>
+            <div class="textLogo">
+                <img src="assets/owl.png" alt="owl">
+                <h1>LexiGo</h1>
+            </div>
+            <a href="#">
+                Главная
+            </a>
+        </header>
+        <main>
+            <div class="lessonQuestion">
+                <h1>${currentLesson.question}</h1>
+            </div>
+            <div class="answers">
+                <a>${sortOptions[0]}</a>
+                <a>${sortOptions[1]}</a>
+                <a>${sortOptions[2]}</a>
+                <a>${sortOptions[3]}</a>
+            </div>
+        </main>
+    `
+
+    document.querySelector("#lesson header a").addEventListener("click", () => {
+        location.reload()
+    })
+    
+
+    let options = document.querySelectorAll("#lesson main .answers a");
+    options.forEach((answer) => {
+        answer.addEventListener("click", () => {
+            if (answer.innerHTML.toLowerCase() == currentLesson.answer) {
+                answer.style.background = "#00d600";
+                alert("Правильно!")
+                let options = document.querySelectorAll("#lesson main .answers a");
+                options.forEach((answer) => {
+                    if (answer.innerHTML.toLowerCase() != currentLesson.answer) {
+                        answer.style.background = "red";
+                    }
+                })
+
+                setTimeout(() => {
+                    incrementLesson();
+                    location.reload();
+                }, 2000)
+            } else {
+                answer.style.background = "red";
+            }
+        })
+    })
+
+
 }
 
 function showQuestion(questionId) {
@@ -177,7 +213,6 @@ function showWay() {
         lesson.addEventListener("click", () => {
             if(parseInt(lesson.getAttribute("res")) == localStorage.getItem("lesson")) {
                 showLesson(lessonNumber);
-                incrementLesson();
             }
         })
     });
