@@ -69,15 +69,9 @@ function showLesson(lessonNumber) {
     let options = document.querySelectorAll("#lesson main .answers a");
     options.forEach((answer) => {
         answer.addEventListener("click", () => {
-            if (answer.innerHTML.toLowerCase() == currentLesson.answer) {
+            if (answer.innerHTML.toLowerCase() == currentLesson.answer.toLowerCase()) {
                 answer.style.background = "#00d600";
                 let options = document.querySelectorAll("#lesson main .answers a");
-                options.forEach((answer) => {
-                    if (answer.innerHTML.toLowerCase() != currentLesson.answer) {
-                        answer.style.background = "red";
-                    }
-                })
-
                 setTimeout(() => {
                     incrementLesson();
                     location.reload();
