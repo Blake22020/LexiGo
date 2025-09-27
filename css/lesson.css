@@ -73,9 +73,25 @@
     color: white;
     font-size: 56px;
     cursor: pointer;
+    box-shadow: 0 10px 0 #168ec5; 
 }
 
-/*TODO: Добавить адаптацию для мобильных устройств */
+#lesson main .answers a:active {
+    transform: translateY(6px);
+    box-shadow: 0 5px 0 #168ec5; 
+}
+
+#lesson main .answers a.wrong {
+    background: #ff0000;
+    box-shadow: 0 10px 0 #ad0000; 
+}
+
+#lesson main .answers a.correct {
+    background: #58cc02;
+    box-shadow: 0 10px 0 #49a502; 
+}
+
+
 @media (max-width: 2150px) {
     #lesson main .answers {
         width: 50%;

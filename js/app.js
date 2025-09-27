@@ -70,14 +70,16 @@ function showLesson(lessonNumber) {
     options.forEach((answer) => {
         answer.addEventListener("click", () => {
             if (answer.innerHTML.toLowerCase() == currentLesson.answer.toLowerCase()) {
-                answer.style.background = "#00d600";
+                answer.style.background = "#58cc02";
+                answer.classList.add("correct");
+                
                 let options = document.querySelectorAll("#lesson main .answers a");
                 setTimeout(() => {
                     incrementLesson();
                     location.reload();
                 }, 500)
             } else {
-                answer.style.background = "red";
+                answer.classList.add("wrong");
             }
         })
     })
@@ -205,7 +207,7 @@ function showWay() {
 
         lesson.addEventListener("click", () => {
             if(parseInt(lesson.getAttribute("res")) == localStorage.getItem("lesson")) {
-                showLesson(lessonNumber);
+                setTimeout(() => showLesson(lessonNumber), 100);
             }
         })
     });

@@ -107,6 +107,18 @@ body, html {
     -ms-user-select: none;
     user-select: none;
     cursor: pointer;
+    box-shadow: 0 15px 0 rgba(0, 0, 0, 0.85);
+    transition: all 0.1s ease;
+}
+
+.main main .container .grid .lesson.current, 
+.main main .container .grid .lesson.active  {
+    box-shadow: 0 15px 0 #168ec5;
+}
+
+.main main .container .grid .lesson.current:active{
+    box-shadow: 0 5px 0 #168ec5;
+    transform: translateY(6px);
 }
 
 .main main .container .grid .lesson.double-digit {
@@ -174,11 +186,20 @@ body, html {
     text-decoration: none;
     text-align: center;
     transition: all 0.3s ease;
+    box-shadow: 0 5px 0 #168ec5; /* Darker green for the "depth" */
+
 
     &:hover {
         background: rgba(28, 176, 246, 0.8);
     }
+
+    &:active {
+        transform: translateY(3px); /* Move button down slightly */
+        box-shadow: 0 2px 0 #168ec5; /* Reduce shadow to simulate pressing */
+    }
 }
+
+
 
 .main footer .authorsText {
     display: flex;
@@ -285,14 +306,29 @@ body, html {
     text-decoration: none;
     text-align: center;
     cursor: pointer;
+    transition: all 0.1s ease;
 }
 
 .modal-reset .modal .buttons a:nth-child(1) {
     background: #1CB0F6;
+    box-shadow: 0 10px 0 #168ec5;
+}
+
+.modal-reset .modal .buttons a:nth-child(1):active {
+    transform: translateY(5px);
+    box-shadow: 0 5px 0 #168ec5;
+
 }
 
 .modal-reset .modal .buttons a:nth-child(2) {
     background: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 10px 0 rgba(0, 0, 0, 0.55);
+}
+
+.modal-reset .modal .buttons a:nth-child(2):active {
+    transform: translateY(5px);
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.55);
+
 }
 
 @media (max-width: 1400px) {

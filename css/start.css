@@ -98,18 +98,18 @@ body, html {
 .start .question-1 .answers .card{
     background: rgba(0, 0, 0, 0.05);
     border-radius: 45px;
-    border-bottom: 10px solid #1CB0F6 ;
+    box-shadow: 0 15px 0 #1CB0F6 ;
     padding: 25px;
     cursor: pointer;
-    box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.25);
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
 
     &:hover {
         background: rgba(0, 0, 0, 0.075);
     }
 
     &:active {
-        border: 0;
+        box-shadow: 0 5px 0 #1CB0F6;
+        transform: translateY(6px);
     }
 }
 
@@ -188,19 +188,18 @@ body, html {
 .start .question-2 .answers .card{
     background: rgba(0, 0, 0, 0.05);
     border-radius: 45px;
-    border-bottom: 10px solid #1CB0F6 ;
+    box-shadow: 0 10px 0 #1CB0F6;
     padding: 25px;
     cursor: pointer;
-    box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.25);
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
 
     &:hover {
         background: rgba(0, 0, 0, 0.075);
     }
 
     &:active {
-        border: 0;
-        transform: translateY(10px);
+        box-shadow: 0 5px 0 #1CB0F6;
+        transform: translateY(6px);
     }
 }
 
@@ -270,19 +269,18 @@ body, html {
 .start .question-3 .answers .card{
     background: rgba(0, 0, 0, 0.05);
     border-radius: 45px;
-    border-bottom: 10px solid #1CB0F6 ;
+    box-shadow: 0 10px 0 #1CB0F6;
     padding: 25px;
     cursor: pointer;
-    box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.25);
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
 
     &:hover {
         background: rgba(0, 0, 0, 0.075);
     }
 
     &:active {
-        border: 0;
-        transform: translateY(10px);
+        box-shadow: 0 5px 0 #1CB0F6;
+        transform: translateY(6px);
     }
 }
 
@@ -354,19 +352,18 @@ body, html {
     width: 100%;
     background: rgba(0, 0, 0, 0.05);
     border-radius: 45px;
-    border-bottom: 10px solid #1CB0F6 ;
+    box-shadow: 0 10px 0 #1CB0F6;
     padding: 25px;
     cursor: pointer;
-    box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.25);
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
 
     &:hover {
         background: rgba(0, 0, 0, 0.075);
     }
 
     &:active {
-        border: 0;
-        transform: translateY(10px);
+        box-shadow: 0 5px 0 #1CB0F6;
+        transform: translateY(6px);
     }
 }
 
