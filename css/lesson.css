@@ -156,4 +156,8 @@
         height: 100%;
         align-items: center;
     }
+
+    #lesson main .lessonQuestion h1 {
+        font-size: 36px;
+    }
 }

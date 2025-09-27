@@ -425,7 +425,7 @@ body, html {
     .start .question-2 .question-text .hi .hello,
     .start .question-3 .question-text .hi .hello,
     .start .question-4 .question-text .hi .hello {
-        font-size: 56px;
+        font-size: 56px; 
     }
 
     .start .question-1 .question-text .hi .textLogo h1,
