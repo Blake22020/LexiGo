@@ -1,7 +1,7 @@
 let profileUser = {};
 const preventDefault = (e) => e.preventDefault();
-const disableScroll = () => document.addEventListener('touchmove', preventDefault, { passive: false }); // "Никакой прокрутки!"
-const enableScroll = () => document.removeEventListener('touchmove', preventDefault, { passive: false }); // "Продолжаем прокрутку!"
+const disableScroll = () => document.addEventListener('touchmove', preventDefault, { passive: false }); 
+const enableScroll = () => document.removeEventListener('touchmove', preventDefault, { passive: false }); 
 
 
 class Lesson {
@@ -75,7 +75,7 @@ function showLesson(lessonNumber) {
                 setTimeout(() => {
                     incrementLesson();
                     location.reload();
-                }, 2000)
+                }, 500)
             } else {
                 answer.style.background = "red";
             }
